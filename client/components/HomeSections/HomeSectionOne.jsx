@@ -31,7 +31,15 @@ const HomeSectionOne = () => {
 	console.log(submissionValues);
 
 	return (
-		<div className="text-black flex items-center flex-col headerBackgroundImage h-screen">
+		<div
+			className="text-black flex items-center flex-col justify-center h-screen headerBackgroundImage"
+			style={{
+				// backgroundImage: "url('/backgroundImage.png')",
+				backgroundSize: "cover",
+				backgroundPosition: "center",
+				height: "100vh",
+			}}
+		>
 			{showModal && (
 				<Modal setShowModal={setShowModal}>
 					{/* <LocationForm /> */}
@@ -45,7 +53,7 @@ const HomeSectionOne = () => {
 				height={130}
 				width={130}
 				alt="Picture not found"
-				className="mt-8"
+				className=""
 			/>
 			<h2 className="mt-8 font-bold text-5xl text-white">
 				Check your car Price in 10 secs{" "}
@@ -71,7 +79,10 @@ const HomeSectionOne = () => {
 						{submissionValues.location || "Delhi NCR"}
 					</span>
 				</div>
-				<div className="flex flex-col bg-white items-center justify-center ">
+				<div
+					className="flex flex-col bg-white items-center justify-center cursor-pointer"
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.manufacturingYear ? (
 						<span className="text-[14px] text-gray-700 font-bold">
 							{submissionValues.manufacturingYear}
@@ -85,7 +96,10 @@ const HomeSectionOne = () => {
 						</label>
 					)}
 				</div>
-				<div className="bg-white flex items-center justify-center">
+				<div
+					className="bg-white flex items-center justify-center cursor-pointer"
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.brand ? (
 						<span className="text-[14px] text-gray-700 font-bold">
 							{submissionValues.brand}
@@ -99,7 +113,10 @@ const HomeSectionOne = () => {
 						</label>
 					)}
 				</div>
-				<div className={` bg-white items-center flex justify-center`}>
+				<div
+					className={` bg-white items-center flex justify-center cursor-pointer`}
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.model ? (
 						<span className="text-[14px] text-gray-700 font-bold">
 							{submissionValues.model}
@@ -113,7 +130,10 @@ const HomeSectionOne = () => {
 						</label>
 					)}
 				</div>
-				<div className="bg-white flex justify-center items-center">
+				<div
+					className="bg-white flex justify-center items-center cursor-pointer"
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.variant ? (
 						<span className="text-[10px] text-gray-700 font-bold">
 							{submissionValues.variant}
@@ -127,7 +147,10 @@ const HomeSectionOne = () => {
 						</label>
 					)}
 				</div>
-				<div className="bg-white flex justify-center items-center">
+				<div
+					className="bg-white flex justify-center items-center cursor-pointer"
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.ownershipHistory ? (
 						<span className="text-[15px] text-gray-700 font-bold">
 							{submissionValues.ownershipHistory}
@@ -141,7 +164,10 @@ const HomeSectionOne = () => {
 						</label>
 					)}
 				</div>
-				<div className="bg-white  flex justify-center items-center">
+				<div
+					className="bg-white  flex justify-center items-center cursor-pointer"
+					onClick={() => setShowModal(true)}
+				>
 					{submissionValues.kilometer ? (
 						<span className="text-[10px] text-gray-700 font-bold">
 							{submissionValues.kilometer}
@@ -158,6 +184,7 @@ const HomeSectionOne = () => {
 				{/* <div className="items-center bg-[#ed264f]"> */}
 				<button
 					className={`bg-[#ed264f] hover:bg-[#c11f42] lg:col-span-2 duration-300 flex items-center justify-center cursor-pointer ${montserrat.className} px-4 rounded-r-xl`}
+					onClick={() => setShowModal(true)}
 				>
 					<span className="mr-1 uppercase font-bold text-gray-200">
 						Continue
