@@ -84,7 +84,7 @@ const HomeSectionOne = () => {
 						RTO Location
 					</label>
 					<span className="text-[14px] text-gray-700 font-bold">
-						{submissionValues.location || "Delhi NCR"}
+						{submissionValues.location || "Select Location"}
 					</span>
 				</div>
 				<div
