@@ -9,7 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import LocationForm from "../Registration Forms/BrandForm";
 import FormContainer from "../Registration Forms/FormContainer";
 import { useSelector } from "react-redux";
-
+import { motion } from "framer-motion";
 const montserrat = Montserrat({
 	subsets: ["latin"],
 	weight: "500",
@@ -55,14 +55,22 @@ const HomeSectionOne = () => {
 				alt="Picture not found"
 				className=""
 			/>
-			<h2 className="mt-8 font-bold text-5xl text-white">
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 3 }}
+				className="mt-8 font-bold text-5xl text-white"
+			>
 				Check your car Price in 10 secs{" "}
-			</h2>
+			</motion.div>
 
 			<i className={`${inter.className} capitalize text-sm text-gray-300 my-8`}>
 				your car details
 			</i>
-			<div
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				transition={{ duration: 5 }}
 				className={`grid lg:grid-cols-9 text-sm ${geist.className} divide-x divide-gray-200 `}
 			>
 				<div
@@ -192,7 +200,7 @@ const HomeSectionOne = () => {
 					<FaArrowRight color="white" />
 				</button>
 				{/* </div> */}
-			</div>
+			</motion.div>
 		</div>
 	);
 };

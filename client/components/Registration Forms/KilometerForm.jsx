@@ -6,6 +6,7 @@ import {
 } from "@/app/redux/slices/newUser";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const kilometerRanges = [
 	"0 Km - 10,000 Km",
@@ -37,7 +38,12 @@ const KilometerForm = ({ setCurrentStep }) => {
 		dispatch(updateSubmissionValues({ name: "kilometer", value: data }));
 	};
 	return (
-		<div className=" overflow-y-auto max-h-[25rem]">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+			className=" overflow-y-auto max-h-[25rem]"
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>kilometers driven</b> by your car
@@ -54,7 +60,7 @@ const KilometerForm = ({ setCurrentStep }) => {
 					</span>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

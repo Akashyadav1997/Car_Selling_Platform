@@ -8,6 +8,7 @@ import {
 	updateInputValues,
 	updateSubmissionValues,
 } from "@/app/redux/slices/newUser";
+import { motion } from "framer-motion";
 
 // create a list of years as the third party calendar is too tricky to render this simple years list
 const currentYear = new Date().getFullYear();
@@ -38,12 +39,18 @@ const ManufacturingYearForm = ({ setCurrentStep }) => {
 		console.log(value);
 		dispatch(updateInputValues({ index: 2, value: value }));
 		dispatch(increaseCurrentSteps({ value: 4 }));
-		dispatch(updateSubmissionValues({ name: "manufacturingYear", value: value }));
+		dispatch(
+			updateSubmissionValues({ name: "manufacturingYear", value: value })
+		);
 
 		setCurrentStep((value) => value + 1);
 	};
 	return (
-		<div>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>Manufaturing Year</b> of your car
@@ -76,7 +83,7 @@ const ManufacturingYearForm = ({ setCurrentStep }) => {
 					2010 or Older
 				</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

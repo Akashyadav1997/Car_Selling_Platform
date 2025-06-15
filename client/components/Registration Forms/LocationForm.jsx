@@ -7,6 +7,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const indianCities = [
 	{ name: "Delhi" },
@@ -129,7 +130,11 @@ const LocationForm = ({ setCurrentStep }) => {
 	};
 
 	return (
-		<div>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>RTO Location</b> of your car
@@ -156,7 +161,7 @@ const LocationForm = ({ setCurrentStep }) => {
 					</div>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

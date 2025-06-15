@@ -7,6 +7,7 @@ import {
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const carModels = [
 	"Baleno",
@@ -53,7 +54,11 @@ const CarModelForm = ({ setCurrentStep }) => {
 		dispatch(updateSubmissionValues({ name: "model", value: car }));
 	};
 	return (
-		<div>
+				<motion.div
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 1 }}
+				>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>Model</b> of your car
@@ -77,7 +82,7 @@ const CarModelForm = ({ setCurrentStep }) => {
 					</span>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

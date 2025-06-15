@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { RiLoader2Line } from "react-icons/ri";
 import { useSelector } from "react-redux";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const VerificationForm = () => {
 	const [getOtp, setGetOTP] = useState(false);
@@ -123,7 +124,12 @@ const VerificationForm = () => {
 	console.log(userDetails);
 
 	return (
-		<div className=" overflow-y-auto max-h-[30rem]">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+			className=" overflow-y-auto max-h-[30rem]"
+		>
 			<h4 className=" capitalize text-xs mt-8">one last step</h4>
 			<h1 className="font-bold my-3">
 				Verifty your Email Address to see your car valuation
@@ -188,7 +194,7 @@ const VerificationForm = () => {
 					)}
 				</button>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

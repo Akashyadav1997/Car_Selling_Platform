@@ -6,6 +6,7 @@ import {
 import Image from "next/image";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const carVariants = [
 	"LX [2010 - 2019]",
@@ -66,7 +67,12 @@ const CarVariantForm = ({ setCurrentStep }) => {
 		dispatch(updateSubmissionValues({ name: "variant", value: value }));
 	};
 	return (
-		<div className=" overflow-y-scroll max-h-[30rem]">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+			className=" overflow-y-scroll max-h-[30rem]"
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>Variant</b> of your car
@@ -166,7 +172,7 @@ const CarVariantForm = ({ setCurrentStep }) => {
 					</div>
 				)}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

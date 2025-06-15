@@ -6,6 +6,7 @@ import {
 } from "@/app/redux/slices/newUser";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const ownershipOptions = [
 	"1st owner",
@@ -23,10 +24,17 @@ const CarOwnerShipForm = ({ setCurrentStep }) => {
 		setCurrentStep((value) => value + 1);
 		dispatch(updateInputValues({ index: 7, value: value }));
 		dispatch(increaseCurrentSteps({ value: 7 }));
-		dispatch(updateSubmissionValues({ name: "ownershipHistory", value: value }));
+		dispatch(
+			updateSubmissionValues({ name: "ownershipHistory", value: value })
+		);
 	};
 	return (
-		<div className=" overflow-y-scroll max-h-[30rem]">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+			className=" overflow-y-scroll max-h-[30rem]"
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>Ownership History</b> of your car
@@ -43,7 +51,7 @@ const CarOwnerShipForm = ({ setCurrentStep }) => {
 					</span>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

@@ -5,6 +5,7 @@ import {
 } from "@/app/redux/slices/newUser";
 import React from "react";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 const purchaseTimings = [
 	"Immediately",
@@ -23,7 +24,12 @@ const SellingTimingForm = ({ setCurrentStep }) => {
 		dispatch(updateSubmissionValues({ name: "sellingTime", value: data }));
 	};
 	return (
-		<div className=" overflow-y-auto max-h-[30rem]">
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+			className=" overflow-y-auto max-h-[30rem]"
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>want to sell</b> by your car
@@ -40,7 +46,7 @@ const SellingTimingForm = ({ setCurrentStep }) => {
 					</span>
 				))}
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

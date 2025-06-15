@@ -14,6 +14,8 @@ import {
 } from "@/app/redux/slices/newUser";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
+
 const poppins = Poppins({
 	subsets: ["latin"],
 	weight: ["300"],
@@ -324,7 +326,11 @@ const BrandForm = ({ setCurrentStep }) => {
 		dispatch(updateSubmissionValues({ name: "brand", value: brand }));
 	};
 	return (
-		<div>
+		<motion.div
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 1 }}
+		>
 			<div className="relative my-3 mx-6 ">
 				<h2 className="text-sm">
 					Select the <b>brand</b> of you car
@@ -361,7 +367,7 @@ const BrandForm = ({ setCurrentStep }) => {
 					))}
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 
