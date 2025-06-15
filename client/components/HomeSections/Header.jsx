@@ -8,7 +8,7 @@ const Header = () => {
 	return (
 		<div
 			// className=" grid grid-cols-2 text-black py-5 bg-gradient-to-b from-[#595959] to-transparent"
-			className=" grid grid-cols-2 bg-white text-black text-center py-4"
+			className=" grid grid-cols-2 bg-white text-black text-center py-4 absolute w-full"
 		>
 			<div className="flex justify-center ">
 				<svg
@@ -60,10 +60,10 @@ const Header = () => {
 				</svg>
 			</div>
 			<div className="grid grid-cols-4 px-[10rem] items-center text-sm">
-				<div className="flex justify-center items-center cursor-pointer">
+				{/* <div className="flex justify-center items-center cursor-pointer">
 					Buy car <IoMdArrowDropdown className="ml-1" />
 				</div>
-				<div className="flex justify-center items-center">More <IoMdArrowDropdown className="ml-1" /></div>
+				<div className="flex justify-center items-center">More <IoMdArrowDropdown className="ml-1" /></div> */}
 				<div className=" flex flex-col items-center justify-center">
 					<VscAccount size={30} className=" cursor-pointer duration-200 my-1" />
                     <span className="text-[12px]">Account</span>

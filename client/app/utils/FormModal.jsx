@@ -9,7 +9,7 @@ const Modal = ({ setShowModal, children }) => {
 	};
 	return (
 		<div
-			className="bg-black/50 z-50 absolute  flex justify-center items-center inset-0"
+			className="bg-black/70 z-50 absolute  flex justify-center items-center inset-0"
 			onClick={() => setShowModal(false)}
 		>
 			<div

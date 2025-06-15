@@ -31,7 +31,7 @@ const HomeSectionOne = () => {
 	console.log(submissionValues);
 
 	return (
-		<div className="text-black flex items-center py-5 flex-col headerBackgroundImage">
+		<div className="text-black flex items-center flex-col headerBackgroundImage h-screen">
 			{showModal && (
 				<Modal setShowModal={setShowModal}>
 					{/* <LocationForm /> */}
