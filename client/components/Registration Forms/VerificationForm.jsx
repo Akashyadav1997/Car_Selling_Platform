@@ -111,6 +111,7 @@ const VerificationForm = () => {
 
 			if (result.success) {
 				toast.success(result.message);
+				window.location.reload();
 			} else {
 				toast.error(result.message);
 			}
