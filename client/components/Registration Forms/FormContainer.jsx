@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BrandForm from "./BrandForm";
 import LocationForm from "./LocationForm";
 import ManufacturingYearForm from "./ManufacturingYearForm";
@@ -12,12 +12,12 @@ import { BsArrowLeft } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 
 const FormContainer = () => {
+	const newUser = useSelector((state) => state.newUser);
 	const [currentStep, setCurrentStep] = useState(1);
 	//redux store variables
-	const newUser = useSelector((state) => state.newUser);
 	const dispatch = useDispatch();
 	console.log("below is the my reudux new user value");
-	console.log(newUser.inputValues);
+	console.log(newUser);
 
 	const renderForm = () => {
 		switch (currentStep) {
@@ -47,12 +47,24 @@ const FormContainer = () => {
 		}
 		setCurrentStep((value) => value - 1);
 	};
+
+	useEffect(() => {
+		if (newUser.currentSteps) {
+			setCurrentStep(newUser.currentSteps);
+		}
+	}, []);
+
 	return (
 		<div className="relative">
 			{newUser.inputValues.length > 0 && (
 				<div className="absolute top-[-3rem] left-[-4rem] w-screen">
 					{newUser.inputValues.map((item, index) => (
-						<span key={index} className="mx-1 bg-gray-100 p-1 px-2 py-2 rounded text-xs font-bold">{item}</span>
+						<span
+							key={index}
+							className="mx-1 bg-gray-100 p-1 px-2 py-2 rounded text-xs font-bold"
+						>
+							{item}
+						</span>
 					))}
 				</div>
 			)}
